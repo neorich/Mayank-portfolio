@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center items-start">
       <div className="max-w-4xl">
-        <p className="text-teal text-lg mb-4 stagger-1">Hi, my name is</p>
+        <p className="text-teal text-lg mb-4 stagger-1">Hi, My name is</p>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-lightest-slate stagger-2 animate-float-1">
           Mayank Pandey.
         </h1>
