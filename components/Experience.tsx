@@ -23,7 +23,7 @@ const Experience: React.FC = () => {
               <h4 className="text-md font-semibold text-light-slate mt-4 mb-3">Responsibilities:</h4>
               <ul className="space-y-2 text-slate text-sm leading-relaxed">
                 {job.points.map((point, index) => (
-                  <li key={index} className="flex items-start">
+                  <li key={index} className="flex items-start transition-all duration-200 origin-left hover:scale-105 hover:text-light-slate">
                     <span className="text-teal mr-3 mt-1">▹</span>
                     <span>{point}</span>
                   </li>
@@ -33,7 +33,7 @@ const Experience: React.FC = () => {
               <h4 className="text-md font-semibold text-light-slate mt-6 mb-3">Key Achievements:</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {job.achievements.map((ach, index) => (
-                  <div key={index} className="flex items-start bg-black/70 p-4 rounded-md section-hidden" style={{ transitionDelay: `${index * 100}ms` }}>
+                  <div key={index} className="flex items-start bg-black/70 p-4 rounded-md section-hidden transition-transform duration-300 hover:scale-105" style={{ transitionDelay: `${index * 100}ms` }}>
                      <div className="text-teal mt-1 mr-4 flex-shrink-0"><AchievementIcon/></div>
                     <div>
                       <h5 className="font-bold text-light-slate">{ach.title}</h5>
