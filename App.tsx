@@ -8,7 +8,6 @@ import Campaigns from './components/Campaigns';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import CursorGlow from './components/CursorGlow';
-import Loader from './components/Loader';
 import Chatbot from './components/Chatbot';
 import { campaignData } from './constants';
 import { LinkedInIcon, EmailIcon, PhoneIcon } from './components/Icons';
@@ -43,13 +42,23 @@ EmailLink.displayName = 'EmailLink';
 
 const App: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isAppVisible, setIsAppVisible] = useState(false);
 
   const socialLinksRef = useRef<HTMLDivElement>(null);
   const emailLinkRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2800); // Increased to match new loader animation
+    // Hide loader and show app content
+    const timer = setTimeout(() => {
+        const loader = document.getElementById('loader-container');
+        if (loader) {
+            loader.classList.add('hidden');
+            // Remove the loader from the DOM after the transition ends
+            setTimeout(() => loader.remove(), 500);
+        }
+        setIsAppVisible(true);
+    }, 2800); // Time for loader animation
+
     return () => clearTimeout(timer);
   }, []);
 
@@ -74,7 +83,7 @@ const App: React.FC = () => {
   };
 
   useEffect(() => {
-    if (isLoading) return;
+    if (!isAppVisible) return;
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
@@ -94,12 +103,11 @@ const App: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
       sections.forEach(section => observer.unobserve(section));
     };
-  }, [isLoading]);
+  }, [isAppVisible]);
   
   return (
     <>
-      <Loader />
-      <div className={`relative transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`relative transition-opacity duration-500 ${!isAppVisible ? 'opacity-0' : 'opacity-100'}`}>
         <CursorGlow />
         <Header isScrolled={isScrolled} />
         <SocialLinks ref={socialLinksRef} />
