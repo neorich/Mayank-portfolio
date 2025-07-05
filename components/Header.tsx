@@ -42,8 +42,8 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
         
         <nav className="hidden md:flex space-x-6 items-center">
           {navLinks.map((link, index) => (
-             <a key={link.href} href={link.href} onClick={handleNavClick} className="group text-lightest-slate hover:text-teal transition-colors duration-300 cursor-pointer text-sm font-mono">
-               <span className="text-teal">0{index + 1}.</span> {link.label}
+             <a key={link.href} href={link.href} onClick={handleNavClick} className="nav-link group text-lightest-slate hover:text-teal transition-colors duration-300 cursor-pointer text-sm font-mono">
+               {link.label}
              </a>
           ))}
         </nav>
@@ -66,7 +66,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
                   className="text-lightest-slate hover:text-teal transition-all duration-300 text-2xl cursor-pointer"
                   style={{ transitionDelay: `${isOpen ? index * 100 : 0}ms`, opacity: isOpen ? 1 : 0, transform: isOpen ? 'translateY(0)' : 'translateY(10px)' }}
                 >
-                  <span className="text-teal">0{index + 1}.</span> {link.label}
+                  {link.label}
                 </a>
               ))}
           </nav>
