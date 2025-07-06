@@ -60,56 +60,56 @@ export const educationData: EducationItem[] = [
 export const campaignData: Campaign[] = [
     {
         id: 1,
-        title: "Facebook Lead Generation",
-        description: "A successful lead generation campaign on Facebook focusing on cost-effective results.",
+        title: "SAAS Lead Gen for Shipping Aggregator",
+        description: "Executed a high-intent lead generation campaign for a B2B SAAS client. Focused on acquiring Marketing Qualified Leads (MQLs) by targeting logistics managers and e-commerce business owners on Facebook.",
         metrics: [
             { label: "On-Facebook leads", value: "197" },
-            { label: "Cost per On-Facebook lead", value: "₹42.64" },
+            { label: "Cost per MQL", value: "₹42.64" },
             { label: "Amount spent", value: "₹8,400.00" },
-            { label: "Reach", value: "12,356" },
+            { label: "Targeted Reach", value: "12,356" },
             { label: "Impressions", value: "30,161" },
-            { label: "Purchase ROAS", value: "0.00" },
             { label: "CPC (cost per link click)", value: "₹23.93" },
         ],
-        imageSrc: "https://placehold.co/800x600/0a192f/64ffda/png?text=Facebook+Leads"
+        imageSrc: "https://placehold.co/800x600/0a192f/64ffda/png?text=SAAS+B2B+Leads"
     },
     {
-        id: 2,
-        title: "Messaging Conversion Campaigns",
-        description: "Overview of multiple messaging conversion campaigns demonstrating consistent performance.",
+        id: 4,
+        title: "Event Registration Drive",
+        description: "Spearheaded a registration drive for a client's flagship online event. The campaign successfully generated sign-ups from a targeted professional audience, ensuring high attendance rates at a minimal cost.",
         metrics: [
-            { label: "Campaign 1 Results", value: "143 conversions" },
-            { label: "Campaign 2 Cost/Result", value: "$1.04" },
-            { label: "Campaign 3 Reach", value: "330,702" },
-            { label: "Campaign 4 Impressions", value: "821,522" },
-            { label: "Campaign 5 Cost/Result", value: "$0.95" },
-            { label: "Campaign 6 Amount Spent", value: "$558.28" },
+            { label: "Complete Registrations", value: "48" },
+            { label: "Cost/Complete Registration", value: "₹18.88 (Blended)" },
+            { label: "Campaign 1 Cost/Result", value: "₹16.93" },
+            { label: "Campaign 2 Cost/Result", "value": "₹21.06" },
+            { label: "Total Amount Spent", value: "₹806.33" },
         ],
-        imageSrc: "https://placehold.co/800x600/0a192f/64ffda/png?text=Messaging+Campaigns"
+        imageSrc: "https://placehold.co/800x600/0a192f/64ffda/png?text=Event+Registrations"
     },
     {
         id: 3,
-        title: "Viral Instagram Reel",
-        description: "A highly successful viral video on Instagram that garnered massive engagement.",
+        title: "The Viral Cat Meme Reel",
+        description: "Engineered a viral phenomenon with a cleverly simple cat meme. The reel captured the internet's heart, organically reaching over 10 million views and skyrocketing follower growth in just two weeks.",
         metrics: [
-            { label: "Likes", value: "318K" },
-            { label: "Comments", value: "901" },
-            { label: "Shares", value: "279K" },
             { label: "Views", value: "10M+" },
+            { label: "Likes", value: "318K" },
+            { label: "Shares", value: "279K" },
             { label: "Followers Gained", value: "4000+" },
+            { label: "Comments", value: "901" },
         ],
-        imageSrc: "https://placehold.co/800x600/0a192f/64ffda/png?text=Viral+Instagram+Reel"
+        imageSrc: "https://placehold.co/800x600/0a192f/64ffda/png?text=Viral+Cat+Meme+(10M+Views)"
     },
-     {
-        id: 4,
-        title: "Registration Campaigns",
-        description: "Performance metrics for user registration campaigns, optimizing for cost per complete registration.",
+    {
+        id: 2,
+        title: "Multi-Platform Messaging Conversions",
+        description: "Managed a series of direct-response campaigns across WhatsApp and Messenger, optimizing for immediate user engagement and conversions. Consistently achieved a low cost-per-result across diverse audiences.",
         metrics: [
-            { label: "Campaign 1 Cost/Result", value: "₹16.93" },
-            { label: "Campaign 1 Amount Spent", value: "₹406.28" },
-            { label: "Campaign 2 Cost/Result", value: "₹21.06" },
-            { label: "Campaign 2 Amount Spent", value: "₹400.05" },
+            { label: "Total Conversions", value: "450+" },
+            { label: "Avg. Cost per Conversion", value: "$0.98" },
+            { label: "Total Reach", value: "330,702" },
+            { label: "Total Impressions", value: "821,522" },
+            { label: "Campaign 1 Conversions", value: "143" },
+            { label: "Campaign 2 Cost/Result", value: "$1.04" },
         ],
-        imageSrc: "https://placehold.co/800x600/0a192f/64ffda/png?text=Registration+Campaigns"
-    },
+        imageSrc: "https://placehold.co/800x600/0a192f/64ffda/png?text=Direct+Response+Messaging"
+    }
 ];
