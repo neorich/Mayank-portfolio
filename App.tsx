@@ -124,13 +124,13 @@ const App: React.FC = () => {
         <footer className="text-center py-10 text-slate mt-20">
           {/* Social Links for Mobile */}
           <div className="flex md:hidden justify-center space-x-8 mb-8">
-            <a href="https://www.linkedin.com/in/mayank3pandey/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 text-slate hover:text-teal transition-colors duration-300">
+            <a href="https://www.linkedin.com/in/mayank3pandey/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 text-slate hover:text-teal transform hover:-translate-y-1 transition-all duration-300">
               <LinkedInIcon className="w-7 h-7" />
             </a>
-            <a href="mailto:makemerichmp@gmail.com" aria-label="Email" className="p-2 text-slate hover:text-teal transition-colors duration-300">
+            <a href="mailto:makemerichmp@gmail.com" aria-label="Email" className="p-2 text-slate hover:text-teal transform hover:-translate-y-1 transition-all duration-300">
               <EmailIcon className="w-7 h-7" />
             </a>
-            <a href="tel:+917869207670" aria-label="Phone" className="p-2 text-slate hover:text-teal transition-colors duration-300">
+            <a href="tel:+917869207670" aria-label="Phone" className="p-2 text-slate hover:text-teal transform hover:-translate-y-1 transition-all duration-300">
               <PhoneIcon className="w-7 h-7" />
             </a>
           </div>
