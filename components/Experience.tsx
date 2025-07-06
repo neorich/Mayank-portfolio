@@ -14,7 +14,7 @@ const Experience: React.FC = () => {
             <div className="hidden md:block absolute top-2.5 left-4 w-0.5 h-full bg-gray/20"></div>
             <div className="hidden md:block absolute top-2.5 left-[calc(1rem-1px)] w-4 h-4 bg-black border-2 border-teal rounded-full"></div>
 
-            <div className="transition-all duration-300 hover:bg-dark-gray/50 p-1 rounded-lg">
+            <div className="interactive-card p-6 rounded-lg">
               <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
                 <h3 className="text-xl font-bold text-lightest-slate">{job.role} @ <span className="text-teal">{job.company}</span></h3>
                 <p className="text-slate text-sm mt-2 sm:mt-0 font-mono">{job.duration}</p>
