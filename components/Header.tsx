@@ -37,41 +37,61 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 animate-fade-in-down ${isScrolled ? 'bg-black/80 backdrop-blur-sm shadow-md shadow-black/20' : 'bg-transparent'}`}>
-      <div className="container mx-auto flex justify-end items-center p-4">
-        
-        <nav className="hidden md:flex space-x-6 items-center">
-          {navLinks.map((link, index) => (
-             <a key={link.href} href={link.href} onClick={handleNavClick} className="nav-link group text-lightest-slate hover:text-teal transition-colors duration-300 cursor-pointer text-sm font-mono">
-               {link.label}
-             </a>
-          ))}
-        </nav>
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-teal focus:outline-none z-50">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
-            </svg>
-          </button>
+    <>
+      <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 animate-fade-in-down ${isScrolled ? 'bg-black/80 backdrop-blur-sm shadow-md shadow-black/20' : 'bg-transparent'}`}>
+        <div className="container mx-auto flex justify-end items-center p-4">
+          
+          <nav className="hidden md:flex space-x-6 items-center">
+            {navLinks.map((link, index) => (
+               <a key={link.href} href={link.href} onClick={handleNavClick} className="nav-link group text-lightest-slate hover:text-teal transition-colors duration-300 cursor-pointer text-sm font-mono">
+                 {link.label}
+               </a>
+            ))}
+          </nav>
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-teal focus:outline-none z-50 relative">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
+              </svg>
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
       
-      <div className={`md:hidden fixed top-0 right-0 h-full w-3/4 bg-dark-gray/95 backdrop-blur-sm transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+      {/* Mobile Menu Overlay */}
+      <div
+        className={`md:hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 ease-in-out ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setIsOpen(false)}
+        aria-hidden={!isOpen}
+      >
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className={`fixed top-0 right-0 h-full w-3/4 max-w-xs bg-dark-gray shadow-xl transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+          role="dialog"
+          aria-modal="true"
+        >
           <nav className="flex flex-col items-center justify-center h-full space-y-8">
-             {navLinks.map((link, index) => (
+              {navLinks.map((link, index) => (
                 <a 
                   key={link.href} 
                   href={link.href} 
                   onClick={handleNavClick} 
                   className="text-lightest-slate hover:text-teal transition-all duration-300 text-2xl cursor-pointer"
-                  style={{ transitionDelay: `${isOpen ? index * 100 : 0}ms`, opacity: isOpen ? 1 : 0, transform: isOpen ? 'translateY(0)' : 'translateY(10px)' }}
+                  style={{ 
+                    transition: 'opacity 0.3s ease, transform 0.3s ease',
+                    transitionDelay: `${isOpen ? 100 + index * 50 : 0}ms`, 
+                    opacity: isOpen ? 1 : 0, 
+                    transform: isOpen ? 'translateY(0)' : 'translateY(10px)'
+                  }}
+                  tabIndex={isOpen ? 0 : -1}
                 >
                   {link.label}
                 </a>
               ))}
           </nav>
+        </div>
       </div>
-    </header>
+    </>
   );
 };
 
